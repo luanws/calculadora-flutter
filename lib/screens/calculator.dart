@@ -9,7 +9,11 @@ class Calculator extends StatelessWidget {
       home: Column(
         children: <Widget>[
           Display("0"),
-          Text("Keyboard"),
+          Text(
+            "Keyboards",
+            style:
+                TextStyle(color: Colors.white, decoration: TextDecoration.none),
+          ),
         ],
       ),
     );
