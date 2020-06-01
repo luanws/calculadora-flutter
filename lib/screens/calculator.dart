@@ -1,4 +1,5 @@
 import 'package:calculadoraflutter/components/display.dart';
+import 'package:calculadoraflutter/components/keyboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,11 +10,7 @@ class Calculator extends StatelessWidget {
       home: Column(
         children: <Widget>[
           Display("0"),
-          Text(
-            "Keyboards",
-            style:
-                TextStyle(color: Colors.white, decoration: TextDecoration.none),
-          ),
+          Keyboard(),
         ],
       ),
     );
