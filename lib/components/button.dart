@@ -12,6 +12,9 @@ class Button extends StatelessWidget {
 
   Button({@required this.text, this.flex = 1, this.color = DEFAULT});
 
+  Button.operation(
+      {@required this.text, this.flex = 1, this.color = OPERATION});
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
