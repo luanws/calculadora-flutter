@@ -2,15 +2,29 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  final String text;
+  static const DARK = Color.fromRGBO(82, 82, 82, 1);
+  static const DEFAULT = Color.fromRGBO(112, 112, 112, 1);
+  static const OPERATION = Color.fromRGBO(250, 158, 13, 1);
 
-  Button({@required this.text});
+  final String text;
+  final int flex;
+  final Color color;
+
+  Button({@required this.text, this.flex = 1, this.color = DEFAULT});
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      child: Text(text),
-      onPressed: () {},
+    return Expanded(
+      flex: flex,
+      child: RaisedButton(
+        color: color,
+        child: Text(
+          text,
+          style: TextStyle(
+              color: Colors.white, fontSize: 30, fontWeight: FontWeight.w200),
+        ),
+        onPressed: () {},
+      ),
     );
   }
 }
