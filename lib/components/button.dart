@@ -9,11 +9,19 @@ class Button extends StatelessWidget {
   final String text;
   final int flex;
   final Color color;
+  final void Function(String) callback;
 
-  Button({@required this.text, this.flex = 1, this.color = DEFAULT});
+  Button(
+      {@required this.text,
+      this.flex = 1,
+      this.color = DEFAULT,
+      @required this.callback});
 
   Button.operation(
-      {@required this.text, this.flex = 1, this.color = OPERATION});
+      {@required this.text,
+      this.flex = 1,
+      this.color = OPERATION,
+      @required this.callback});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +34,7 @@ class Button extends StatelessWidget {
           style: TextStyle(
               color: Colors.white, fontSize: 30, fontWeight: FontWeight.w200),
         ),
-        onPressed: () {},
+        onPressed: () => callback(text),
       ),
     );
   }

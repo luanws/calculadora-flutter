@@ -4,13 +4,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Calculator extends StatelessWidget {
+  _onPressed(String text) {
+    print(text);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Column(
         children: <Widget>[
           Display("0"),
-          Keyboard(),
+          Keyboard(_onPressed),
         ],
       ),
     );
